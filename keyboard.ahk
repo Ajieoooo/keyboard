@@ -23,7 +23,7 @@ CapsAction(action)
 
 #if capslock
     $*p::CapsAction("BS")
-    $*y::CapsAction("Esc")
+    $*z::CapsAction("Esc")
     $*i::CapsAction("Home")
     $*o::CapsAction("End")
     $*h::CapsAction("Left")
@@ -33,7 +33,9 @@ CapsAction(action)
     $*u::CapsAction("PgUp")
     $*n::CapsAction("PgDn")
     m::SendInput {Shift Down}{Insert}{Shift Up}
-    $f::!^1
+    $f::^+1
+    $*d::+F10
+    $*q::!F4
 #if
 
 semicolon := 0

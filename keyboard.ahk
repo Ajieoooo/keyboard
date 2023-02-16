@@ -9,7 +9,7 @@ capslock := 0
     if (A_PriorKey = "CapsLock" && (A_TickCount - capslock) < 500)
     {
         if GetKeyState("CapsLock", "T") = 0
-            SetCapsLockState, On
+            SetCapsLockState, Off
         else
             SetCapsLockState, AlwaysOff
     }
@@ -22,12 +22,18 @@ CapsAction(action)
 }
 
 #if capslock
+    $*p::CapsAction("BS")
+    $*y::CapsAction("Esc")
+    $*i::CapsAction("Home")
+    $*o::CapsAction("End")
     $*h::CapsAction("Left")
     $*j::CapsAction("Down")
     $*k::CapsAction("Up")
     $*l::CapsAction("Right")
     $*u::CapsAction("PgUp")
     $*n::CapsAction("PgDn")
+    m::SendInput {Shift Down}{Insert}{Shift Up}
+    $f::!^1
 #if
 
 semicolon := 0

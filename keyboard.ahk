@@ -33,7 +33,9 @@ CapsAction(action)
     $*u::CapsAction("PgUp")
     $*n::CapsAction("PgDn")
     m::SendInput {Shift Down}{Insert}{Shift Up}
+    ,::SendInput {Alt Down}{Insert}{Alt Up}
     $f::^+1
+    $r::^+2
     $*d::+F10
     $*q::!F4
 #if
